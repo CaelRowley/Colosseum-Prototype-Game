@@ -83,6 +83,7 @@
       <script>scripts\scr_menu_control_state.gml</script>
     </scripts>
     <script>scripts\scr_draw_shadow.gml</script>
+    <script>scripts\scr_client_packet_recv.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font0</font>
@@ -112,6 +113,8 @@
     <object>objects\obj_item_parent</object>
     <object>objects\obj_item_sword</object>
     <object>objects\obj_item_potion</object>
+    <object>objects\obj_client_connection</object>
+    <object>objects\obj_client_listener</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_colloseum</room>

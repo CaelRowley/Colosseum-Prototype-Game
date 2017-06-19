@@ -1,5 +1,16 @@
 ///scr_client_player_move_state()
-scr_get_client_player_input();
+
+/// Handle packets recieved
+
+//var buffer = argument[0];
+//scr_get_client_player_input();
+
+//dash_button = keyboard_check_pressed(vk_space);
+//attack_button = mouse_check_button_pressed(mb_left);
+
+// Get the axis
+player_xaxis = (right_button - left_button);
+player_yaxis = (down_button - up_button);
 
 // Get player direction
 player_direction = point_direction(0, 0, player_xaxis, player_yaxis);

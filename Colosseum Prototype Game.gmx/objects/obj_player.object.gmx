@@ -82,6 +82,41 @@ for (var i = 0; i &lt; 3; i++) {
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Init client
+//var type = network_socket_tcp;
+//var ip = "192.168.0.165";
+//var port = 8002;
+
+//socket = network_create_socket(type);
+//connection = network_connect_raw(socket, ip, port);
+//network_set_config(network_config_use_non_blocking_socket, 1);
+
+//var size = 1024;
+//var type = buffer_fixed;
+//var alignment = 1;
+//buffer = buffer_create(size, type, alignment);
+
+//window_set_size(640,640);
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="2" enumb="0">
       <action>
@@ -133,6 +168,26 @@ if(obj_player_stats.hp &lt;= 0){
     instance_destroy();
 }
 </string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string></string>
           </argument>
         </arguments>
       </action>
