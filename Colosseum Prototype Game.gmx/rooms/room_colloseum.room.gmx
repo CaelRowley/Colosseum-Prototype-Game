@@ -121,8 +121,6 @@
     <instance objName="obj_item_potion" x="416" y="448" name="inst_D21938F4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_item_potion" x="416" y="480" name="inst_D45E3069" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_item_potion" x="224" y="480" name="inst_3B22D8F3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_client_connection" x="32" y="288" name="inst_D4A0D645" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_client_listener" x="64" y="288" name="inst_990B52DA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>-1</PhysicsWorld>
