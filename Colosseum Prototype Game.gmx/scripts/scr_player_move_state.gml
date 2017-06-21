@@ -41,19 +41,19 @@ if(player_length == 0)
     image_index = 0;
 
 // Abilities
-if(dash_button && obj_player_stats.stamina >= DASH_COST){
+if(dash_button_pressed && obj_player_stats.stamina >= DASH_COST){
     state = scr_player_dash_state;
     alarm[0] = room_speed / player_dash_time;
     obj_player_stats.stamina -= DASH_COST;
     obj_player_stats.alarm[0] = room_speed / 2;
 }
 
-if(attack_button){
+if(action_one_button_pressed){
     image_index = 0;
     state = scr_player_attack_state;
 }
 
-if(shield_button){
+if(action_two_button_pressed){
     image_index = 0;
     //state = scr_player_shield_state;
     state = scr_player_gun_state;
