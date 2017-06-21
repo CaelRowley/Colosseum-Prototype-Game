@@ -55,6 +55,22 @@ if(action_one_button_pressed){
 
 if(action_two_button_pressed){
     image_index = 0;
-    //state = scr_player_shield_state;
-    state = scr_player_gun_state;
+    state = scr_player_shield_state;
+    
+    switch (action_two_state){
+        case "scr_player_shield_state":
+        state = scr_player_shield_state;
+            break;
+        case "scr_player_gun_state":
+        state = scr_player_gun_state;
+            break;
+    }
+}
+
+if(save_button){
+    ini_save();
+}
+
+if(load_button){
+    ini_load();
 }

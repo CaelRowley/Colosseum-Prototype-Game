@@ -50,6 +50,8 @@ image_speed = 0;
 // Set player default state
 state = scr_player_move_state;
 
+// Player controls
+action_two_state = "scr_player_default_state";
 </string>
           </argument>
         </arguments>

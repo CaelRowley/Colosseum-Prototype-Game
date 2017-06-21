@@ -15,6 +15,10 @@ action_two_button_released = mouse_check_button_released(mb_right);
 player_xaxis = (right_button - left_button);
 player_yaxis = (down_button - up_button);
 
+// Save and load controls
+save_button = keyboard_check(ord("K"));
+load_button = keyboard_check(ord("L"));
+
 // Use gamepad if able
 if(gamepad_is_connected(0)){
     gamepad_set_axis_deadzone(0, 0.3);
