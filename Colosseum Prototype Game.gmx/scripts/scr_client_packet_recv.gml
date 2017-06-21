@@ -3,7 +3,7 @@ var buffer = argument[0];
 var message_id = buffer_read(buffer, buffer_string);
 
 //Creating player
-if(message_id == "Player2"){
+if(message_id == "Player1"){
     show_debug_message("Client: " + message_id);
     var mx = buffer_read(buffer, buffer_u32);
     var my = buffer_read(buffer, buffer_u32);
@@ -45,6 +45,11 @@ if(message_id == "NoD"){
 //Attack
 if(message_id == "LMB"){
     obj_client_player.attack_button = 1;
+    obj_client_player.alarm[1] = 0.1*room_speed
+    //obj_client_player.image_index = 0;
+    //obj_client_player.state = scr_client_player_attack_state;
+    //obj_client_player.attack_button = 1;
+    //obj_client_player.attack_button = 0;
 }
 if(message_id == "NoLMB"){
     obj_client_player.attack_button = 0;
@@ -53,6 +58,7 @@ if(message_id == "NoLMB"){
 //Dash
 if(message_id == "space"){
     obj_client_player.dash_button = 1;
+    obj_client_player.alarm[2] = 0.1*room_speed
 }
 if(message_id == "Nospace"){
     obj_client_player.dash_button = 0;  

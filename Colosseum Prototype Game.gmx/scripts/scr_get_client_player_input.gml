@@ -1,7 +1,7 @@
 ///scr_get_client_player_input()
 // Set movement controls
 
-up_button = keyboard_check(ord("W"));
+/*up_button = keyboard_check(ord("W"));
 left_button = keyboard_check(ord("A"));
 right_button = keyboard_check(ord("D"));
 down_button = keyboard_check(ord("S"));
@@ -20,7 +20,7 @@ if(gamepad_is_connected(0)){
     player_yaxis = (gamepad_axis_value(0, gp_axislv));
     dash_button = gamepad_button_check_pressed(0, gp_face2);
     attack_button = gamepad_button_check_pressed(0, gp_face3);
-}
+}*/
 
 //var message_id = buffer_read(buffer, buffer_string);
 //show_debug_message(message_id);

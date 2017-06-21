@@ -1,5 +1,5 @@
 ///scr_player_dash_state()
-scr_get_client_player_input();
+//scr_get_client_player_input();
 if(player_length == 0){
     player_direction = face * 90;
 }

@@ -120,6 +120,7 @@
     <object>objects\obj_client_listener</object>
     <object>objects\obj_player_bullet</object>
     <object>objects\obj_player_gun</object>
+    <object>objects\obj_client_player_stats</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_colloseum</room>

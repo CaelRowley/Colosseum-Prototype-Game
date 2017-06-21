@@ -17,11 +17,11 @@ class GameCustomServer(socketserver.ThreadingTCPServer):
 
     def broadcast(self, source, data):
         for client in tuple(self.clients):
-            if client is not source:
+            #if client is not source:
             #print(data)
             #client.schedule((source, data))
-                client.request.send(data)
-                print("Sent client data")
+            client.request.send(data)
+            print(data)
 
     def remove_client(self, client):
         self.clients.remove(client)

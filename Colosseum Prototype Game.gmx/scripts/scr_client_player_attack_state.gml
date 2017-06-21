@@ -46,6 +46,6 @@ if(image_index >= 3 and attacked == false){
 
     var hitbox = instance_create(xx, yy, obj_player_attack_hitbox);
     hitbox.creator = id;
-    hitbox.damage = obj_player_stats.attack_damage;
+    hitbox.damage = obj_client_player_stats.attack_damage;
     attacked = true;
 }

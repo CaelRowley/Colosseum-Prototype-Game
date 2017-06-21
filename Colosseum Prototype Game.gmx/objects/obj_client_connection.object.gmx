@@ -27,8 +27,8 @@
             <kind>1</kind>
             <string>/// Init client
 var type = network_socket_tcp;
-var ip = "192.168.0.17";
-var port = 8002;
+var ip = "192.168.0.164";
+var port = 8003;
 
 socket = network_create_socket(type);
 connection = network_connect_raw(socket, ip, port);
@@ -39,7 +39,7 @@ var type = buffer_fixed;
 var alignment = 1;
 buffer = buffer_create(size, type, alignment);
 
-window_set_size(640,640);
+//window_set_size(1020,900);
 </string>
           </argument>
         </arguments>
@@ -77,7 +77,7 @@ if(keyboard_check_pressed(vk_enter)){
 }
 
 //Up
-if(keyboard_check(ord("W"))){
+if(keyboard_check_pressed(ord("W"))){
     buffer_seek(buffer, buffer_seek_start, 0);
     buffer_write(buffer, buffer_string, "W");
     network_send_packet(socket, buffer, buffer_tell(buffer));
@@ -89,7 +89,7 @@ if(keyboard_check_released(ord("W"))){
 }
 
 //Left
-if(keyboard_check(ord("A"))){
+if(keyboard_check_pressed(ord("A"))){
     buffer_seek(buffer, buffer_seek_start, 0);
     buffer_write(buffer, buffer_string, "A");
     network_send_packet(socket, buffer, buffer_tell(buffer));
@@ -101,7 +101,7 @@ if(keyboard_check_released(ord("A"))){
 }
 
 //Right
-if(keyboard_check(ord("D"))){
+if(keyboard_check_pressed(ord("D"))){
     buffer_seek(buffer, buffer_seek_start, 0);
     buffer_write(buffer, buffer_string, "D");
     network_send_packet(socket, buffer, buffer_tell(buffer));
@@ -113,7 +113,7 @@ if(keyboard_check_released(ord("D"))){
 }
 
 //Down
-if(keyboard_check(ord("S"))){
+if(keyboard_check_pressed(ord("S"))){
     buffer_seek(buffer, buffer_seek_start, 0);
     buffer_write(buffer, buffer_string, "S");
     network_send_packet(socket, buffer, buffer_tell(buffer));  
