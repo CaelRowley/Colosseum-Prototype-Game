@@ -55,5 +55,6 @@ if(attack_button){
 
 if(shield_button){
     image_index = 0;
-    state = scr_player_shield_state;
+    //state = scr_player_shield_state;
+    state = scr_player_gun_state;
 }
