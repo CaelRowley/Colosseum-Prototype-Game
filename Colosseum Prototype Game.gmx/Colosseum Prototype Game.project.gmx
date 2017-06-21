@@ -87,6 +87,10 @@
     </scripts>
     <script>scripts\scr_draw_shadow.gml</script>
     <script>scripts\scr_client_packet_recv.gml</script>
+    <scripts name="Settings">
+      <script>scripts\ini_save.gml</script>
+      <script>scripts\ini_load.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font0</font>
