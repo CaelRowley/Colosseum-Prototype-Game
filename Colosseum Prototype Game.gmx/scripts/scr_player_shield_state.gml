@@ -6,7 +6,6 @@ player_move_direction = point_direction(0, 0, player_xaxis, player_yaxis);
 player_look_direction = point_direction(x, y, mouse_x, mouse_y);
 
 // Get player length
-
 if(player_xaxis == 0 and player_yaxis == 0) {
     player_length = 0;
 } else {

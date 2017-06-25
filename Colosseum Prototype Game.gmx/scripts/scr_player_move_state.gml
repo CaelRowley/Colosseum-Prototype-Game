@@ -67,8 +67,12 @@ if(action_two_button_pressed){
     }
 }
 
-if(save_button){
-    ini_save();
+if(save_shield_button){
+    ini_save("scr_player_shield_state");
+}
+
+if(save_gun_button){
+    ini_save("scr_player_gun_state");
 }
 
 if(load_button){
