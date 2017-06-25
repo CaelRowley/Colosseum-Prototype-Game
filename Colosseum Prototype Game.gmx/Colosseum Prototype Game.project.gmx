@@ -25,6 +25,12 @@
       <sprite>sprites\spr_player_shield</sprite>
       <sprite>sprites\spr_player_gun</sprite>
       <sprite>sprites\spr_player_bullet</sprite>
+      <sprites name="Shield">
+        <sprite>sprites\spr_player_shield_right</sprite>
+        <sprite>sprites\spr_player_shield_left</sprite>
+        <sprite>sprites\spr_player_shield_up</sprite>
+        <sprite>sprites\spr_player_shield_down</sprite>
+      </sprites>
     </sprites>
     <sprite>sprites\spr_sign</sprite>
     <sprites name="Client Player">
@@ -91,6 +97,7 @@
       <script>scripts\ini_save.gml</script>
       <script>scripts\ini_load.gml</script>
     </scripts>
+    <script>scripts\scr_hurt_self.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font0</font>

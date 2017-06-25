@@ -115,7 +115,7 @@ with(other){
             <string>/// Damage objects
 if(other.id != creator){
     other.hp -= damage;
-    
+        
     if(instance_exists(creator)){
         var dir = point_direction(creator.x, creator.y, other.x, other.y);
     } else{
@@ -153,7 +153,10 @@ if(other.id != creator){
             <kind>1</kind>
             <string>/// Damage objects
 if(other.id != creator){
-    obj_player_stats.hp -= damage;
+    //obj_player_stats.hp -= damage;
+    with(other) {
+        scr_hurt_self(other.damage);
+    }
     
     if(instance_exists(creator)){
         var dir = point_direction(creator.x, creator.y, other.x, other.y);

@@ -1,21 +1,23 @@
 ///scr_player_attack_state()
+scr_get_player_input();
+
 image_speed = player_attack_speed;
 
-switch(sprite_index){
-    case spr_player_move_down:
-        sprite_index = spr_player_attack_down;
-        break;
-        
-    case spr_player_move_left:
+player_look_direction = point_direction(x, y, mouse_x, mouse_y);
+
+scr_get_face();
+switch (face) {
+    case LEFT:
         sprite_index = spr_player_attack_left;
         break;
-        
-    case spr_player_move_right:
+    case RIGHT:
         sprite_index = spr_player_attack_right;
         break;
-        
-    case spr_player_move_up:
+    case UP:
         sprite_index = spr_player_attack_up;
+        break;
+    case DOWN:
+        sprite_index = spr_player_attack_down;
         break;
 }
 
@@ -48,4 +50,8 @@ if(image_index >= 3 and attacked == false){
     hitbox.creator = id;
     hitbox.damage = obj_player_stats.attack_damage;
     attacked = true;
+}
+
+if(action_two_button_released){
+    shield_active = false;
 }

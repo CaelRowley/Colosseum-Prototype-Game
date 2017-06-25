@@ -1,15 +1,15 @@
 ///scr_player_dash_state()
 scr_get_player_input();
 if(player_length == 0){
-    player_direction = face * 90;
+    player_look_direction = face * 90;
 }
 
 // Dash speed
 player_length = player_speed * player_dash_speed;
 
 // Get player horizontal and verticle speeds 
-player_hspeed = lengthdir_x(player_length, player_direction);
-player_vspeed = lengthdir_y(player_length, player_direction);
+player_hspeed = lengthdir_x(player_length, player_look_direction);
+player_vspeed = lengthdir_y(player_length, player_look_direction);
 
 // Move player
 phy_position_x += player_hspeed;

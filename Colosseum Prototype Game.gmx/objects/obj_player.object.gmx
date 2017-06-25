@@ -25,6 +25,41 @@
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>/// Init client
+//var type = network_socket_tcp;
+//var ip = "192.168.0.165";
+//var port = 8002;
+
+//socket = network_create_socket(type);
+//connection = network_connect_raw(socket, ip, port);
+//network_set_config(network_config_use_non_blocking_socket, 1);
+
+//var size = 1024;
+//var type = buffer_fixed;
+//var alignment = 1;
+//buffer = buffer_create(size, type, alignment);
+
+//window_set_size(640,640);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>/// Set player settings
 event_inherited();
 // Movement settings
@@ -34,7 +69,8 @@ player_vspeed = 0;
 player_length = 0;
 player_xaxis = 0;
 player_yaxis = 0;
-player_direction = 0;
+player_move_direction = 0;
+player_look_direction = 0;
 player_dash_speed = 5;
 player_dash_time = 5;
 player_attack_time = 2;
@@ -47,8 +83,12 @@ player_image_speed = 0.3;
 player_attack_speed = 0.8;
 image_speed = 0;
 
+// Shield check
+shield_active = false;
+
 // Set player default state
 state = scr_player_move_state;
+
 
 // Player controls
 action_two_state = "scr_player_default_state";
@@ -80,41 +120,6 @@ for (var i = 0; i &lt; 3; i++) {
 }
 
 
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Init client
-//var type = network_socket_tcp;
-//var ip = "192.168.0.165";
-//var port = 8002;
-
-//socket = network_create_socket(type);
-//connection = network_connect_raw(socket, ip, port);
-//network_set_config(network_config_use_non_blocking_socket, 1);
-
-//var size = 1024;
-//var type = buffer_fixed;
-//var alignment = 1;
-//buffer = buffer_create(size, type, alignment);
-
-//window_set_size(640,640);
 </string>
           </argument>
         </arguments>
@@ -346,7 +351,11 @@ with(obj_player_stats) {
             <string>/// Change back to move state
 if (state == scr_player_attack_state)
 {
-    state = scr_player_move_state;
+    if (shield_active) {
+    state = scr_player_shield_state;
+    } else {
+        state = scr_player_move_state;
+    }
     attacked = false;
 }
 </string>
