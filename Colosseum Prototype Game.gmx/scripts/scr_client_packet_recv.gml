@@ -3,7 +3,7 @@ var buffer = argument[0];
 var message_id = buffer_read(buffer, buffer_string);
 
 //Creating player
-if(message_id == "Player1"){
+if(message_id == "Player2"){
     show_debug_message("Client: " + message_id);
     var mx = buffer_read(buffer, buffer_u32);
     var my = buffer_read(buffer, buffer_u32);

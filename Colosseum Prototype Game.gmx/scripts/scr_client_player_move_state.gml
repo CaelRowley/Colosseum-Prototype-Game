@@ -13,7 +13,8 @@ player_xaxis = (right_button - left_button);
 player_yaxis = (down_button - up_button);
 
 // Get player direction
-player_direction = point_direction(0, 0, player_xaxis, player_yaxis);
+player_move_direction = point_direction(0, 0, player_xaxis, player_yaxis);
+player_look_direction = point_direction(0, 0, player_xaxis, player_yaxis);
 
 // Get player length
 if(player_xaxis == 0 and player_yaxis == 0){
@@ -38,8 +39,8 @@ if(player_xaxis == 0 and player_yaxis == 0){
 }
 
 // Get player horizontal and verticle speeds 
-player_hspeed = lengthdir_x(player_length, player_direction);
-player_vspeed = lengthdir_y(player_length, player_direction);
+player_hspeed = lengthdir_x(player_length, player_move_direction);
+player_vspeed = lengthdir_y(player_length, player_move_direction);
 
 // Move player
 phy_position_x += player_hspeed;

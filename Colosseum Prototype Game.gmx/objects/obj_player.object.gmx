@@ -115,7 +115,7 @@ action_two_state = "scr_player_default_state";
             <string>/// Create inventory
 
 for (var i = 0; i &lt; 3; i++) {
-    inv[i] = -1;
+    inv[i] = "-1";
     inv_number[i] = 0;
 }
 
@@ -219,8 +219,9 @@ if(obj_player_stats.hp &lt;= 0){
             <string>/// Add item to inventory
 
 for (var i = 0; i &lt; 3; i++) {
-    if(inv[i] == -1 || inv[i] == other.object_index) {
-        inv[i] = other.object_index;
+    if(inv[i] == "-1" || inv[i] == object_get_name(other.object_index)) {
+        //inv[i] = other.object_index;
+        inv[i] = object_get_name(other.object_index);
         inv_number[i]++;
         with(other) instance_destroy(); 
         break;
