@@ -25,28 +25,32 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// check for clients
-var type_event = async_load[? "type"];
-var buffer = async_load[? "buffer"];
-//show_debug_message(buffer)
+            <string>/// check for clients
+var ip_client = ds_map_find_value(async_load, "ip");
+var type_event = ds_map_find_value(async_load, "type");
 
-switch(type_event){
-    case network_type_connect:
-        if (socket == noone){
-            socket = async_load[? "type"];
-            show_debug_message("Initial socket connect")
-        }
-        break;
+//var type_event = async_load[? "type"];
+//var buffer = async_load[? "buffer"];
+show_debug_message(type_event); 
+
+//switch(type_event){
+if(type_event == network_type_connect){
+    if (socket == noone){
+        var socket = ds_map_find_value(async_load, "socket");
+        ds_list_add(obj_client_connection_list.socket_list, socket);
+        show_debug_message("Initial socket connect");
+    }
     
-    case network_type_disconnect:    
-        socket = noone;
-        break;
-        
-    case network_type_data:
-        var buffer = async_load[? "buffer"];
-        buffer_seek(buffer, buffer_seek_start,0);
-        scr_client_packet_recv(buffer);
-        break;
+}else if(type_event == network_type_disconnect){
+    var socket = ds_map_find_value(async_load, "socket");
+    ds_list_add(obj_client_connection_list.socket_list, socket);
+    socket = noone;
+    
+}else if(type_event == network_type_data){
+    var socket = ds_map_find_value(async_load, "socket");
+    var buffer = ds_map_find_value(async_load, "buffer");
+    buffer_seek(buffer, buffer_seek_start,0);
+    scr_client_packet_recv(buffer,socket,ip_client);
 }
 </string>
           </argument>
