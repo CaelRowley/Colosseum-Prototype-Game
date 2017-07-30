@@ -1,13 +1,19 @@
 ///Handle packets recieved
 var buffer = argument[0];
+var socket = argument[1];
+var ip = argument[2];
 var message_id = buffer_read(buffer, buffer_string);
-
+show_debug_message(message_id)
 //Creating player
 if(message_id == "Player1"){
     show_debug_message("Client: " + message_id);
     var mx = buffer_read(buffer, buffer_u32);
     var my = buffer_read(buffer, buffer_u32);
     instance_create(mx, my, obj_client_player);
+    //if (socket == noone){
+        ds_list_add(obj_client_connection_list.socket_list, socket);
+        show_debug_message("Initial socket connect to: " + ip);
+    //}
 }
 
 //Up
