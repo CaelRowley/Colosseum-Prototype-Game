@@ -26,9 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>/// Initialize player stats
-hp = 10000;
+hp = 10;
 maxhp = hp;
-stamina = 1000;
+stamina = 100;
 maxstamina = stamina;
 level = 1;
 

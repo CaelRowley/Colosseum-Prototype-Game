@@ -41,6 +41,11 @@
         <sprite>sprites\spr_player_shield_up</sprite>
         <sprite>sprites\spr_player_shield_down</sprite>
       </sprites>
+      <sprites name="UI">
+        <sprite>sprites\spr_player_health_border</sprite>
+        <sprite>sprites\spr_player_health_inner</sprite>
+        <sprite>sprites\spr_player_health_bg</sprite>
+      </sprites>
     </sprites>
     <sprite>sprites\spr_sign</sprite>
     <sprites name="Client Player">
@@ -144,6 +149,9 @@
     <object>objects\obj_client_player_stats</object>
     <object>objects\obj_music_controller</object>
     <object>objects\obj_client_connection_list</object>
+    <objects name="Player UI">
+      <object>objects\obj_ui_controller</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_colloseum</room>
