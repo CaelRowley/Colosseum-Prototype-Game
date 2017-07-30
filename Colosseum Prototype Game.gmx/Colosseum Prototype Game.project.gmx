@@ -143,6 +143,7 @@
     <object>objects\obj_player_gun</object>
     <object>objects\obj_client_player_stats</object>
     <object>objects\obj_music_controller</object>
+    <object>objects\obj_client_connection_list</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_colloseum</room>
