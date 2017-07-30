@@ -11,8 +11,8 @@ if(message_id == "Player2"){
     var my = buffer_read(buffer, buffer_u32);
     instance_create(mx, my, obj_client_player);
     //if (socket == noone){
-        ds_list_add(obj_client_connection_list.socket_list, socket);
-        show_debug_message("Initial socket connect to: " + ip);
+        //ds_list_add(obj_client_connection_list.socket_list, socket);
+        //show_debug_message("Initial socket connect to: " + ip);
     //}
 }
 
