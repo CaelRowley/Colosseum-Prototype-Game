@@ -28,7 +28,7 @@
             <string>/// Init client
 var type = network_socket_tcp;
 var ip = "192.168.0.193";
-var port = 8003;
+var port = 8002;
 
 socket = network_create_socket(type);
 connection = network_connect_raw(socket, ip, port);
