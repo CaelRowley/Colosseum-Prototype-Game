@@ -20,6 +20,16 @@
     <sprite>sprites\spr_enemy_slime</sprite>
     <sprite>sprites\spr_door</sprite>
     <sprite>sprites\spr_healthpack</sprite>
+    <sprites name="Skeleton">
+      <sprite>sprites\spr_skeleton_move_down</sprite>
+      <sprites name="UI">
+        <sprite>sprites\spr_skeleton_stats_bg</sprite>
+        <sprite>sprites\spr_skeleton_stats_info</sprite>
+      </sprites>
+      <sprites name="Items">
+        <sprite>sprites\spr_item_green_sword</sprite>
+      </sprites>
+    </sprites>
     <sprites name="Player">
       <sprite>sprites\spr_player_attack_left</sprite>
       <sprite>sprites\spr_player_attack_up</sprite>
@@ -154,6 +164,7 @@
       <object>objects\obj_ui_controller</object>
     </objects>
     <object>objects\cyborg</object>
+    <object>objects\obj_skeleton_menu_stats</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_colloseum</room>
