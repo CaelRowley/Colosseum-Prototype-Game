@@ -42,9 +42,9 @@
         <sprite>sprites\spr_player_shield_down</sprite>
       </sprites>
       <sprites name="UI">
-        <sprite>sprites\spr_player_health_border</sprite>
-        <sprite>sprites\spr_player_health_inner</sprite>
-        <sprite>sprites\spr_player_health_bg</sprite>
+        <sprite>sprites\spr_player_hud_shell</sprite>
+        <sprite>sprites\spr_player_health_bar</sprite>
+        <sprite>sprites\spr_player_stamina_bar</sprite>
       </sprites>
     </sprites>
     <sprite>sprites\spr_sign</sprite>
@@ -65,6 +65,7 @@
     <sprite>sprites\spr_inventory_box_mask</sprite>
     <sprite>sprites\spr_potion</sprite>
     <sprite>sprites\spr_sword</sprite>
+    <sprite>sprites\temp</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_grass</background>
@@ -152,6 +153,7 @@
     <objects name="Player UI">
       <object>objects\obj_ui_controller</object>
     </objects>
+    <object>objects\cyborg</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_colloseum</room>
