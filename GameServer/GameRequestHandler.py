@@ -5,6 +5,8 @@ import io
 import argparse
 import select
 import queue
+import struct
+
 
 class GameRequestHandler(socketserver.BaseRequestHandler):
     def __init__(self, request, client_address, server):
@@ -21,13 +23,16 @@ class GameRequestHandler(socketserver.BaseRequestHandler):
         try:
             while self.socketRunning:
                 self.data = self.request.recvfrom(1024)
+                #print(self.data[0].lower())
+                #self.data.append(1)
+                #self.data[]
+                #unpacked_data = struct.unpack("<b",self.data[0])
+                #print(unpacked_data)
                 self.broadcast_message()
                 
         except(ConnectionResetError, EOFError):
             self.socketRunning = False
             pass
-
-
         
         #while self.socketRunning:
         #    try:
@@ -56,6 +61,5 @@ class GameRequestHandler(socketserver.BaseRequestHandler):
         self.buffer.put_nowait(data)
 
     def finish(self):
-        print("Finished")
         self.server.remove_client(self)
         super().finish()

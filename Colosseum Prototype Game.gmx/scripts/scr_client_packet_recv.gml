@@ -5,6 +5,7 @@ var ip = argument[2];
 var unique_id = buffer_read(buffer, buffer_u32);
 //show_debug_message(unique_id);
 var message_id = buffer_read(buffer, buffer_string);
+
 show_debug_message(message_id);
 //
 if(message_id == "NewPlayer"){
