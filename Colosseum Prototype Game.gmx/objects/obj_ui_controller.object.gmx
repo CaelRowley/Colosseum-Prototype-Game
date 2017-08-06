@@ -28,8 +28,8 @@
             <string>var xScale = 2;
 var yScale = 2;
 
-draw_sprite_ext(spr_player_health_bar, 1, 32, 32, obj_player_stats.hp/obj_player_stats.maxhp * xScale, yScale, 0, c_white, 1);
-draw_sprite_ext(spr_player_stamina_bar, 1, 32, 32, obj_player_stats.stamina/obj_player_stats.maxstamina * xScale, yScale, 0, c_white, 1);
+draw_sprite_part_ext(spr_player_health_bar,0,0,0,sprite_get_width(spr_player_health_bar)/obj_player_stats.maxhp*obj_player_stats.hp,sprite_get_height(spr_player_health_bar),32,32, xScale, yScale, c_white, 1);
+draw_sprite_part_ext(spr_player_stamina_bar,0,0,0,sprite_get_width(spr_player_stamina_bar)/obj_player_stats.maxstamina*obj_player_stats.stamina,sprite_get_height(spr_player_stamina_bar),32,32, xScale, yScale, c_white, 1);
 draw_sprite_ext(spr_player_hud_shell, 1, 32, 32, xScale, yScale, 0, c_white, 1);
 
 </string>

@@ -3,7 +3,10 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <NewExtensions/>
+  <NewExtensions>
+    <extension index="0">extensions\Custom Bar</extension>
+    <extension index="1">extensions\Easy GUI Layer Menu Buttons</extension>
+  </NewExtensions>
   <sounds name="sound">
     <sounds name="Background Music">
       <sound>sound\covfefe_for_doom_guy</sound>
@@ -76,6 +79,11 @@
     <sprite>sprites\spr_potion</sprite>
     <sprite>sprites\spr_sword</sprite>
     <sprite>sprites\temp</sprite>
+    <sprite>sprites\spr_guiBar</sprite>
+    <sprite>sprites\spr_xpBar</sprite>
+    <sprite>sprites\spr_lifeBar</sprite>
+    <sprite>sprites\spr_button1</sprite>
+    <sprite>sprites\spr_button2</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_grass</background>
@@ -122,8 +130,12 @@
     <scripts name="Settings">
       <script>scripts\ini_save.gml</script>
       <script>scripts\ini_load.gml</script>
+      <script>scripts\scr_display_item.gml</script>
     </scripts>
     <script>scripts\scr_hurt_self.gml</script>
+    <script>scripts\scr_bar.gml</script>
+    <script>scripts\button_pressed.gml</script>
+    <script>scripts\button_pressed_circle.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font0</font>
@@ -162,13 +174,19 @@
     <object>objects\obj_client_connection_list</object>
     <objects name="Player UI">
       <object>objects\obj_ui_controller</object>
+      <object>objects\obj_item_green_sword</object>
+      <object>objects\obj_item_text</object>
     </objects>
     <object>objects\cyborg</object>
     <object>objects\obj_skeleton_menu_stats</object>
+    <object>objects\obj_guiBar</object>
+    <object>objects\obj_buttons</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_colloseum</room>
     <room>rooms\room_colloseum_entrance</room>
+    <room>rooms\room0</room>
+    <room>rooms\rm_buttons</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

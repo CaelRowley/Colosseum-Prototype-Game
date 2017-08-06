@@ -19,7 +19,7 @@
         <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
-        <whoName>self</whoName>
+        <whoName>obj_skeleton_menu_stats</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
@@ -27,7 +27,8 @@
             <kind>1</kind>
             <string>draw_sprite_ext(spr_skeleton_stats_bg, 0, 0, 0, 11, 11, 0, c_white, 0.8);
 draw_sprite_ext(spr_skeleton_stats_info, 0, 150, 150, 9, 9, 0, c_white, 1);
-draw_sprite_ext(spr_item_green_sword, 0, 330, 186, 9, 9, 0, c_white, 1);
+//draw_sprite_ext(spr_item_green_sword, 0, 330, 186, 9, 9, 0, c_white, 1);
+scr_display_item(spr_item_green_sword, 483, 303, 9, 9);
 draw_text(360, 366, "Green Sword");
 display_set_gui_maximise(1, 1);
 
