@@ -4,7 +4,17 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sounds name="Background Music">
+      <sound>sound\covfefe_for_doom_guy</sound>
+    </sounds>
+    <sounds name="Sound Test">
+      <sound>sound\sound1</sound>
+      <sound>sound\sound2</sound>
+      <sound>sound\sound3</sound>
+      <sound>sound\sound4</sound>
+    </sounds>
+  </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_wall</sprite>
     <sprite>sprites\spr_enemy_slime</sprite>
@@ -31,6 +41,11 @@
         <sprite>sprites\spr_player_shield_up</sprite>
         <sprite>sprites\spr_player_shield_down</sprite>
       </sprites>
+      <sprites name="UI">
+        <sprite>sprites\spr_player_hud_shell</sprite>
+        <sprite>sprites\spr_player_health_bar</sprite>
+        <sprite>sprites\spr_player_stamina_bar</sprite>
+      </sprites>
     </sprites>
     <sprite>sprites\spr_sign</sprite>
     <sprites name="Client Player">
@@ -50,6 +65,7 @@
     <sprite>sprites\spr_inventory_box_mask</sprite>
     <sprite>sprites\spr_potion</sprite>
     <sprite>sprites\spr_sword</sprite>
+    <sprite>sprites\temp</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_grass</background>
@@ -132,6 +148,12 @@
     <object>objects\obj_player_bullet</object>
     <object>objects\obj_player_gun</object>
     <object>objects\obj_client_player_stats</object>
+    <object>objects\obj_music_controller</object>
+    <object>objects\obj_client_connection_list</object>
+    <objects name="Player UI">
+      <object>objects\obj_ui_controller</object>
+    </objects>
+    <object>objects\cyborg</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_colloseum</room>
