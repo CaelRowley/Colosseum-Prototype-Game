@@ -63,6 +63,9 @@ down_button = 0;
 dash_button = 0;
 attack_button = 0;
 
+//Uniques client id
+unique_id = 0;
+
 attacked = false;
 face = 0;
 hp = 10000;

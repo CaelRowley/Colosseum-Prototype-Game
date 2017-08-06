@@ -27,17 +27,35 @@
             <kind>1</kind>
             <string>/// Init client
 var type = network_socket_tcp;
-var ip = "192.168.0.193";
-var port = 8003;
+var ip = "192.168.0.17";
+var port = 8002;
 
 socket = network_create_socket(type);
 connection = network_connect_raw(socket, ip, port);
+//show_debug_message(socket);
+//
 //network_set_config(network_config_use_non_blocking_socket, 1);
 
 var size = 1024;
 var type = buffer_fixed;
 var alignment = 1;
 buffer = buffer_create(size, type, alignment);
+
+randomize();
+var seed = random_get_seed()
+random_set_seed(seed);
+
+//var size = ds_list_size(obj_client_connection_list.socket_list);
+//random_set_seed(1);
+
+//hope = random_range(1, 50);
+//hope2 = random_range(1, 50);
+//hope3 = random_range(1, 50);
+hope = random(1000);
+
+//show_debug_message(hope);
+unique_id = hope;
+//show_debug_message(unique_id);
 
 window_set_size(1200, 750);
 </string>
@@ -69,7 +87,8 @@ if(keyboard_check_pressed(vk_enter)){
     //instance_create(mouse_x,mouse_y,obj_player);
     
     buffer_seek(buffer, buffer_seek_start, 0);
-    buffer_write(buffer, buffer_string, "Player2");
+    buffer_write(buffer, buffer_u32, unique_id);
+    buffer_write(buffer, buffer_string, "NewPlayer");
     buffer_write(buffer, buffer_u32, mouse_x);
     buffer_write(buffer, buffer_u32, mouse_y);
     
@@ -79,11 +98,13 @@ if(keyboard_check_pressed(vk_enter)){
 //Up
 if(keyboard_check_pressed(ord("W"))){
     buffer_seek(buffer, buffer_seek_start, 0);
+    buffer_write(buffer, buffer_u32, unique_id);
     buffer_write(buffer, buffer_string, "W");
     network_send_packet(socket, buffer, buffer_tell(buffer));
 }
 if(keyboard_check_released(ord("W"))){
     buffer_seek(buffer, buffer_seek_start, 0);
+    buffer_write(buffer, buffer_u32, unique_id);
     buffer_write(buffer, buffer_string, "NoW");
     network_send_packet(socket, buffer, buffer_tell(buffer));
 }
@@ -91,11 +112,13 @@ if(keyboard_check_released(ord("W"))){
 //Left
 if(keyboard_check_pressed(ord("A"))){
     buffer_seek(buffer, buffer_seek_start, 0);
+    buffer_write(buffer, buffer_u32, unique_id);
     buffer_write(buffer, buffer_string, "A");
     network_send_packet(socket, buffer, buffer_tell(buffer));
 }
 if(keyboard_check_released(ord("A"))){
     buffer_seek(buffer, buffer_seek_start, 0);
+    buffer_write(buffer, buffer_u32, unique_id);
     buffer_write(buffer, buffer_string, "NoA");
     network_send_packet(socket, buffer, buffer_tell(buffer));
 }
@@ -103,11 +126,13 @@ if(keyboard_check_released(ord("A"))){
 //Right
 if(keyboard_check_pressed(ord("D"))){
     buffer_seek(buffer, buffer_seek_start, 0);
+    buffer_write(buffer, buffer_u32, unique_id);
     buffer_write(buffer, buffer_string, "D");
     network_send_packet(socket, buffer, buffer_tell(buffer));
 }
 if(keyboard_check_released(ord("D"))){
     buffer_seek(buffer, buffer_seek_start, 0);
+    buffer_write(buffer, buffer_u32, unique_id);
     buffer_write(buffer, buffer_string, "NoD");
     network_send_packet(socket, buffer, buffer_tell(buffer));
 }
@@ -115,11 +140,13 @@ if(keyboard_check_released(ord("D"))){
 //Down
 if(keyboard_check_pressed(ord("S"))){
     buffer_seek(buffer, buffer_seek_start, 0);
+    buffer_write(buffer, buffer_u32, unique_id);
     buffer_write(buffer, buffer_string, "S");
     network_send_packet(socket, buffer, buffer_tell(buffer));  
 }
 if(keyboard_check_released(ord("S"))){
     buffer_seek(buffer, buffer_seek_start, 0);
+    buffer_write(buffer, buffer_u32, unique_id);
     buffer_write(buffer, buffer_string, "NoS");
     network_send_packet(socket, buffer, buffer_tell(buffer));
 }
@@ -127,11 +154,13 @@ if(keyboard_check_released(ord("S"))){
 //Attack
 if(mouse_check_button_pressed(mb_left)){
     buffer_seek(buffer, buffer_seek_start, 0);
+    buffer_write(buffer, buffer_u32, unique_id);
     buffer_write(buffer, buffer_string, "LMB");
     network_send_packet(socket, buffer, buffer_tell(buffer));
 }
 if(mouse_check_button_released(mb_left)){
     buffer_seek(buffer, buffer_seek_start, 0);
+    buffer_write(buffer, buffer_u32, unique_id);
     buffer_write(buffer, buffer_string, "NoLMB");
     network_send_packet(socket, buffer, buffer_tell(buffer));
 }
@@ -139,16 +168,18 @@ if(mouse_check_button_released(mb_left)){
 //Dash
 if(keyboard_check_pressed(vk_space)){
     buffer_seek(buffer, buffer_seek_start, 0);
+    buffer_write(buffer, buffer_u32, unique_id);
     buffer_write(buffer, buffer_string, "space");
     network_send_packet(socket, buffer, buffer_tell(buffer));
 }
 if(keyboard_check_released(vk_space)){
     buffer_seek(buffer, buffer_seek_start, 0);
+    buffer_write(buffer, buffer_u32, unique_id);
     buffer_write(buffer, buffer_string, "Nospace");
     network_send_packet(socket, buffer, buffer_tell(buffer));
 }
 if(keyboard_check_pressed(vk_escape)){
-    socket = noone;
+    //socket = noone;
     show_debug_message("socket closed")
 }
 if keyboard_check_pressed(vk_escape) game_end();
