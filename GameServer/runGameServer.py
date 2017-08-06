@@ -5,8 +5,8 @@ from GameRequestHandler import *
 from GameCustomServer import *
 
 if __name__ == "__main__":
-    HOST = "000.000.000.000"
-    PORT = 8003
+    HOST = ""
+    PORT = 8002
     server = GameCustomServer((HOST,PORT), GameRequestHandler)
     server.allow_reuse_address = True
     #server.socket.setblocking(False)
