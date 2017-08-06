@@ -31,7 +31,7 @@ var type_event = ds_map_find_value(async_load, "type");
 
 //var type_event = async_load[? "type"];
 //var buffer = async_load[? "buffer"];
-show_debug_message(type_event); 
+//show_debug_message(type_event); 
 
 //switch(type_event){
 if(type_event == network_type_connect){
