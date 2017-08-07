@@ -27,7 +27,7 @@ if(message_id == "NewPlayer"){
         var otherPlayer = ds_list_find_value(obj_client_connection_list.socket_list,i);
         //show_debug_message(otherPlayer.unique_id);
         if(otherPlayer.unique_id == unique_id){
-            src_client_handle_input(message_id, buffer, unique_id, otherPlayer);
+            scr_client_handle_input(message_id, buffer, unique_id, otherPlayer);
         }
     }
 }
