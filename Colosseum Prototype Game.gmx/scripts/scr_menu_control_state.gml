@@ -6,9 +6,12 @@ if(enter_button){
 }
 
 if(tab_button_pressed){
-    //Display menu
+//view_wview[0...7] will give you the width of the view, view_hview[0...7] 
+    instance_create(view_xview[0]+view_wview[0]/2, view_yview[0]+view_hview[0]/2, obj_skeleton_menu_stats);
+    show_debug_message("paused");
 }
 
 if(tab_button_released){
-    //Hide menu
+    with (obj_skeleton_menu_stats) instance_destroy();
+    show_debug_message("unpaused");
 }
